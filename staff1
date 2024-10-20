@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <style>
+      .logo {
+        display:inline-block;
+        margin-right:10px;
+      }
+      .page-header {
+        display:inline-block;
+        vertical-align: top;
+      }
+      .top-bar {
+        background-color: #294a70;
+        height: 4px;
+      }
+      .page-footer {
+        background-color: #294a70;
+        color: white;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 14px;
+        line-height: 1.5;
+        text-align: center;
+        padding: 4px;
+      }
+      .left, .right {
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="logo">
+      <img alt="Tug Hill Commission Logo" src="https://tughill.org/wp-content/uploads/2024/06/THC-2024-LOGO-RESIZED-FOR-WEBSITE.png" style="width: 125px; height: 94px;" />
+    </div>
+    <div class="page-header">
+      <p style="font-size:22px;">NEW YORK STATE</p>
+      <p>TUG HILL COMMISSION</p>
+    </div>
+    <div class="top-bar"></div>
+    <h1>Staff</h1>
+    <p><strong><a href="https://c4abc699.caspio.com/folderlogout">Logout</a></strong></p>
+    <script>
+      // https://forums.caspio.com/topic/6885-caspio-iframe-embedded-tabbed-interface/
+       function getElementByClass(classer) {
+         var allHTMLTags=document.getElementsByTagName("*");
+         var array = [];
+         for (i=0; i<allHTMLTags.length; i++) {
+         if (allHTMLTags[i].className==classer) {
+         array.push(allHTMLTags[i]);
+         }}
+         return array;
+       }
+       
+       function channel(n){
+         var frames = getElementByClass("ChannelView");
+         var length = frames.length;
+         for(var i = 0; i < length; i++)
+         { if(frames[i].id == ("viewer"+ n))
+         { frames[i].style.display = "inline";
+           frames[i].contentWindow.location.reload();
+        
+         }else{ frames[i].style.display = "none";}}
+       }
+     </script>
+       
+     <div style="display:block; text-align:left;">
+       <div style="display:block;">
+         <ul id="menu">
+           <li><a onclick="channel(0)">Tab 0</a></li>
+           <li><a onclick="channel(1)">Tab 1</a></li>
+           <li><a onclick="channel(2)">Tab 2</a></li>
+         </ul>
+       </div>
+       <div class="content">
+         <iframe frameborder=0 id="viewer0" class="ChannelView" src="https://c4abc699.caspio.com/dp/fbc3e0002508027d2c4a4e45b028/emb" style="display:inline"></iframe>
+         <iframe frameborder=0 id="viewer1" class="ChannelView" src="https://c4abc699.caspio.com/dp/fbc3e00099d4a7d230b34503a4a6/emb"></iframe>
+         <iframe frameborder=0 id="viewer2" class="ChannelView" src="https://c4abc699.caspio.com/dp/fbc3e000c8a2b1f6be97496ea290/emb"></iframe>
+       </div>
+     </div>
+    
+    <div class="page-footer">
+      NYS Tug Hill Commission<br />
+      Dulles State Office Building<br />
+      317 Washington Street<br />
+      Watertown, NY 13601-3782
+    </div>
+  </body>
+</html>
