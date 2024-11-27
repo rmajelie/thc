@@ -65,7 +65,17 @@
          }else{ frames[i].style.display = "none";}}
        }
      </script>
-       
+
+    <iframe id="myIframe" src="https://c4abc699.caspio.com/dp/fbc3e000c8a2b1f6be97496ea290" width="600" height="400"></iframe>
+    <button onclick="reloadIframe()">Refresh Iframe</button>
+
+    <script>
+        function reloadIframe() {
+            var iframe = document.getElementById('myIframe');
+            iframe.src = iframe.src; // Resetting the src will reload the iframe
+        }
+    </script>
+    
      <div style="display:block; text-align:left;">
        <div style="display:block;">
          <ul id="menu">
